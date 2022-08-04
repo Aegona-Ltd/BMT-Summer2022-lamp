@@ -1,0 +1,45 @@
+ body
+ {
+ 	margin: auto;
+ 	padding: auto;
+ 	width: 400px;
+ 	padding-top: 150px;
+ 	background-color: #DADADA;
+ }
+ .header
+ {
+ 	
+ 	padding-bottom: 25px;
+ }
+.content
+{
+	padding-top: 5px;
+	background-color: #f3f4f5;
+	padding: 10px;
+}
+button
+{
+	width: 370px;
+	padding-right: 10px;
+	background-color: #35BDB2;
+	border: 1px;
+	height: 40px;
+
+}
+input
+{
+	margin-top: 10px;
+}
+.us
+{
+	margin-top: 10px;
+	background-color: #f8f8f9;
+	height: 40px;
+	text-align: center;
+}
+.capcha
+{
+	margin-left: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
