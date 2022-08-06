@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<link rel="stylesheet" type="text/css" media="screen" href="//cdn.muicss.com/mui-0.10.3/css/mui.css" />
+<link rel="stylesheet" type="text/css" href="defaut.css">
+
+<body>
+  <div class="header">
+  <img style="float: left; " src="ds.png">
+  <h3 style="color: #35BDB2; margin-top: 15px;padding-top: 10px">Log-in to your account abc</h4>
+</div>
+<div class="content">
+  <form class="mui-form">
+  
+  
+  
+  <div class="mui-textfield mui-textfield--float-label">
+
+    <input type="email" placeholder="Nhap email" id="email" >
+    
+  </div>
+  <div class="mui-textfield mui-textfield--float-label">
+    <input type="password" placeholder="Nhap password" id="password">
+    
+  </div>
+  <div class="capcha">
+  <div class="g-recaptcha" data-sitekey="6LfsLkMhAAAAADHZMNyZdVerQ-8rCNT9WBs_mUoZ"></div>
+</div>
+  <button type="submit" class="mui-btn mui-btn--raised" onclick="Login(event)" >Submit</button>
+</form>
+</div>
+<div class="us">
+<p>New to us?<a href="">Register</a></p>
+</div>
+ <script src="//cdn.muicss.com/mui-0.10.3/js/mui.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="script.js"></script>
+    <script src="ajax.js"></script>
+</body>
+</html>
