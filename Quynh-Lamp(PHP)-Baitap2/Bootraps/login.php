@@ -1,24 +1,4 @@
-<?php
 
-$Data = ["usn" => "quynh@gmail.com", "pass" => "quynh1997123@"];
-$verify=null;
-$type=null;
-$message=null;
-if (isset($_POST['username'])) {
-    if ($Data["usn"] == $_POST['username'] && $Data["pass"] == $_POST['password']) {
-      $message= "Đăng nhập thành công!";
-      $verify=1;
-      $type="success";
-      // echo "Đăng nhập thành công";
-    } else {
-      $message= "Đăng nhập thất bại!";
-      $verify=0;
-      $type="danger";
-      // echo "Đăng nhập thất bại";
-    }
-  }
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -51,7 +31,7 @@ if (isset($_POST['username'])) {
       </div>
     </div>
     <div class="content">
-      <input type="passwork" class="form-control" name="password" id="pass" placeholder="Pass" aria-describedby="inputGroupPrepend" required>
+      <input type="password" class="form-control" name="password" id="pass" placeholder="Password" aria-describedby="inputGroupPrepend" required>
       <div class="invalid-feedback">
         Hay Nhap Password
       </div>
@@ -84,3 +64,25 @@ if (isset($_POST['username'])) {
 </body>
 
 </html>
+<?php
+
+$Data = ["usn" => "quynh@gmail.com", "pass" => "quynh1997123@"];
+$verify=null;
+$type=null;
+$message=null;
+if (isset($_POST['username'])) {
+    if ($Data["usn"] == $_POST['username'] && $Data["pass"] == $_POST['password']) {
+      $message= "Đăng nhập thành công!";
+      $verify=1;
+      $type="success";
+      header("Location:http://127.0.0.1:5501/contact.html");
+      // echo "Đăng nhập thành công";
+    } else {
+      $message= "Đăng nhập thất bại!";
+      $verify=0;
+      $type="danger";
+      // echo "Đăng nhập thất bại";
+    }
+  }
+
+?>

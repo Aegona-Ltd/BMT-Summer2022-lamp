@@ -49,7 +49,7 @@ console.log(isCaptchaChecked);
     if(!validatePass(document.getElementById('pass').value)){
       alert("Sai định dạng pass"); // chay di
     }
-    alert(1);
+    
    
 
   }
