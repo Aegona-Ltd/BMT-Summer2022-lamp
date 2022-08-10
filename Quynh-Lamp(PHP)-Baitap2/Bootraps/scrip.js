@@ -32,6 +32,14 @@
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
+  const validateSDT = (sdt) => {
+    return String(sdt)
+      .toLowerCase()
+      .match(
+        /((09|03|07|08|05)+([0-9]{8})\b)/
+      );
+  };
+
 function Login (e){
   e.preventDefault();
   const isCaptchaChecked = (grecaptcha && grecaptcha.getResponse().length !== 0);
@@ -40,21 +48,39 @@ console.log(isCaptchaChecked);
     var x = document.getElementById("snackbar");
     	x.className = "show";
     	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-      return ;
+      
   }else{
+    
     // alert('Oke')
     if(!validateEmail(document.getElementById('email').value)){
       alert("Sai định dạng email"); // chay di
+      
     }
     if(!validatePass(document.getElementById('pass').value)){
       alert("Sai định dạng pass"); // chay di
+      
     }
+    if(!validateSDT(getElementById(sdt).value))
+    {
+      alert("Sai số điện thoại");
+      
+    }
+    // document.getElementById("from1").submit();
+    // return true;
     
+    
+      
+    }
+   
+   
+    
+   
    
 
   }
+  
  
 
-}
+
   
        

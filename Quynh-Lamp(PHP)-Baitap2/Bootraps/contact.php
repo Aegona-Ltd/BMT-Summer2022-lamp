@@ -17,12 +17,13 @@
   <img style="float: left;" src="ds.png">
   <h4 style="color: #35BDB2; margin-top: 10px;">Log-in to your account abc</h4>
 </div>
-  <form class="needs-validation" novalidate>
+  <form class="needs-validation" novalidate name="contact" method="POST" action ="viewform.php">
     <div>
   <div class="form-row">
     <div class="content">
       
-      <input type="text" class="form-control" placeholder="Nhap ten cua  ban">
+      
+      <input type="text" class="form-control" placeholder="Nhap ten cua  ban" name ="username">
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -32,7 +33,7 @@
     <div class="content">
       
       
-        <input type="text" class="form-control"  placeholder="Username" id="email"
+        <input type="text" class="form-control"  placeholder="Username" id="email" name="name"
           aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
           Please Ten cua ban
@@ -45,7 +46,7 @@
   <div class="content">
       
       
-        <input type="passwork" class="form-control" id="pass" placeholder="pass"
+        <input type="passwork" class="form-control" id="pass" placeholder="pass" name ="passư"
           aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
           Hay Nhap Password
@@ -56,16 +57,16 @@
   <div class="content">
       
       
-        <input type="text" class="form-control"  placeholder="Nhap so dien thoai"
+        <input type="text" class="form-control"  placeholder="Nhập số điện thoại" name="sdt" id="sdt"
           aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
-          Please Ten cua ban
+          Please SĐT
         </div>
       </div>
     </div>
     <div class="content">
     <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texta"></textarea>
   </div>
 
   </div>
@@ -82,6 +83,7 @@
 <p>New to us?<a href="">Register</a></p>
 </div>
 
+
 <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
  <script type="text/javascript" src="scrip.js"></script>
@@ -89,3 +91,6 @@
 
 </body>
 </html>
+
+
+
