@@ -17,7 +17,7 @@
   <img style="float: left;" src="ds.png">
   <h4 style="color: #35BDB2; margin-top: 10px;">Log-in to your account abc</h4>
 </div>
-  <form class="needs-validation" novalidate name="contact" method="POST" action ="viewform.php">
+  <form class="needs-validation" novalidate name="contact" method="POST" action="viewform.php" >
     <div>
   <div class="form-row">
     <div class="content">
@@ -46,7 +46,7 @@
   <div class="content">
       
       
-        <input type="passwork" class="form-control" id="pass" placeholder="pass" name ="passư"
+        <input type="password" class="form-control" id="pass" placeholder="pass" name ="pass"
           aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
           Hay Nhap Password
@@ -54,16 +54,7 @@
       </div>
     </div>
     
-  <div class="content">
-      
-      
-        <input type="text" class="form-control"  placeholder="Nhập số điện thoại" name="sdt" id="sdt"
-          aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please SĐT
-        </div>
-      </div>
-    </div>
+  
     <div class="content">
     <label for="exampleFormControlTextarea1">Example textarea</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texta"></textarea>
@@ -76,7 +67,7 @@
 </div>
 
   <div class="content">
-    <button  type="submit" id="btn" onclick="Login(event)">Submit form</button>
+    <button  type="submit" id="btn" >Submit form</button>
 </div>
 
 <div class="us">

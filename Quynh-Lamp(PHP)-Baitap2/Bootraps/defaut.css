@@ -2,8 +2,9 @@
  {
  	margin: auto;
  	padding: auto;
- 	width: 400px;
- 	padding-top: 150px;
+ 	width: 70%;
+	height: 70%;
+ 	
  	background-color: #DADADA;
  }
  .header
@@ -16,7 +17,14 @@
 	padding-top: 5px;
 	background-color: #f3f4f5;
 	padding: 10px;
+	margin: auto;
+	padding: auto;
 }
+.content1
+{
+	background-color: red;;
+}
+
 button
 {
 	width: 370px;

@@ -1,0 +1,16 @@
+body
+{
+    margin: auto;
+    padding: auto;
+    width: 70%;
+   height: 70%;
+    
+    background-color: #DADADA;
+}
+.table{
+    background-color: #f3f4f5;
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 78px;
+}

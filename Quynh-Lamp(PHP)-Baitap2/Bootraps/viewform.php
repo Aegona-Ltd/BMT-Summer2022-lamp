@@ -6,40 +6,56 @@ if(isset($_POST))
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="table.css">
+ 
+  
 </head>
+
 <body>
-    <style>
-       table, th{
-        border: 1px solid black;
-       }
-    </style>
-    <table style="width:100%">
-    <tr>
-        <th>username</th>
-        <th>email</th>
-        <th>password</th>
-        <th>So Dien Thoai</th>
-        <th>Y kien cua ban</th>
+ 
+</div>
+  </div>
+  <div style="text-align: center;">
+  
+
+
+  <h4 style="color: #35BDB2; margin-top: 40px;">Nhập thông tin từ form</h4>
+  </div>
+</div>
+  
+ <div class="table">
+  <table >
+  <tr>
+    <th>Tên của bạn</th>
+    <th>email</th>
+    <th>Password</th>
+    <th>Ý kiến của bạn</th>
+  </tr>
+  <tr>
+    <td> <?php echo "".$_POST['username'] ?></td>
+    <td><?php echo "".$_POST['name'] ?></td>
+    <td><?php echo "".$_POST['pass'] ?></td>
+    <td><?php echo "".$_POST['texta'] ?></td>
+
     </tr>
-    <tr>
-        <td> <?php echo "".$_POST['username'] ?>;</td>
-        <td><?php echo "".$_POST['name'] ?></td>
-        <td><?php echo "".$_POST['pass'] ?></td>
-        <td><?php echo "".$_POST['sdt'] ?></td>
-        <td><?php echo "".$_POST['texta'] ?></td>
-    </tr>
-        
-    </table>
-    
+</table>
+</div>
+
+  <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script type="text/javascript" src="scrip.js"></script>
+  <script type="text/javascript" src="aj.js"></script>
 </body>
-</html>
+
+
 
 
 

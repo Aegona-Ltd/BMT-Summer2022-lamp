@@ -1,28 +1,5 @@
 
-<?php
 
-$Data = ["usn" => "quynh@gmail.com", "pass" => "quynh1997123@"];
-$verify=null;
-$type=null;
-$message=null;
-if (isset($_POST['username'])) {
-    if ($Data["usn"] == $_POST['username'] && $Data["pass"] == $_POST['password']) {
-      $message= "Đăng nhập thành công!";
-      $verify=1;
-      $type="success";
-      header("Location:http://localhost/Bootraps/contact.php");
-      // echo "Đăng nhập thành công";
-    } else {
-      $message= "Đăng nhập thất bại!";
-      $verify=0;
-      $type="danger";
-      // echo "Đăng nhập thất bại";
-      // echo "Đăng nhập thất bại";
-      
-    }
-  }
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -43,6 +20,7 @@ if (isset($_POST['username'])) {
 
   <h4 style="color: #35BDB2; margin-top: 10px;">Log-in to your account abc</h4>
   </div>
+  
   <form class="needs-validation" id="from1"method="POST">
     <div>
       <div class="form-row">
@@ -68,7 +46,7 @@ if (isset($_POST['username'])) {
         <div id="snackbar">Hay nhap capcha</div>
       </div>
       <div class="content">
-        <button type="submit" id="btn" onclick="Login(event)" >Submit form</button>
+        <button type="submit" id="btn">Submit form</button>
       </div>
       
       <div class="us">
@@ -88,3 +66,27 @@ if (isset($_POST['username'])) {
 </body>
 
 </html>
+<?php
+
+$Data = ["usn" => "quynh@gmail.com", "pass" => "quynh1997123@"];
+$verify=null;
+$type=null;
+$message=null;
+if (isset($_POST['username'])) {
+    if ($Data["usn"] == $_POST['username'] && $Data["pass"] == $_POST['password']) {
+      $message= "Đăng nhập thành công!";
+      $verify=1;
+      $type="success";
+      header("Location:http://localhost/Bootraps/contact.php");
+      // echo "Đăng nhập thành công";
+    } else {
+      $message= "Đăng nhập thất bại!";
+      $verify=0;
+      $type="danger";
+      echo "Đăng nhập thất bại";
+      // echo "Đăng nhập thất bại";
+      
+    }
+  }
+
+?>
