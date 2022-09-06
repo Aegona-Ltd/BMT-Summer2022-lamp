@@ -34,6 +34,8 @@ tr:nth-child(even) {
               <th scope="col">Email</th>
               <th scope="col">Subject</th>
               <th scope="col">Content</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
             </tr>
             @foreach($savecontact as $save)
             <tr>
@@ -41,15 +43,24 @@ tr:nth-child(even) {
              <td>{{$save->email}}</td>
              <td>{{$save->subject}}</td>
              <td>{{$save->content}}</td>
-             
+             <td><a href="/admin/update/{{$save->id}}">Update</a></td>
+             <td>
+             <form action="/admin/delete/{{$save->id}}" method="POST">
+              @csrf
+             <button type="submit" class="btn btn-danger">Delete</button>
+             </form>
+             </td>
              </tr>
              @endforeach
+            
           </thead>
+          
           <tbody>
             
           </tbody>
           <tfoot></tfoot>
         </table>
+        {{$savecontact->links()}}
       </div>
       <div class="d-sm-none col-md-1"></div>
     </div>

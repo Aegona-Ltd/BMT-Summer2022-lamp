@@ -17,13 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('client.contact');
 });
-// Route::get('/show')
-Route::post('/contact',[PostController::class,'save'])->name('contacts');
-Route::prefix('admin')->middleware(['auth'])->group(function(){
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-Route::get('/ContactForm',[PostController::class,'show'])->name('show');
+
+
+Route::post('/contact', [PostController::class, 'save'])->name('contacts');
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/ContactForm', [PostController::class, 'show'])->name('show');
+    Route::get('/update/{id?}', function ($id) {
+        $contact = App\Models\Savecontact::find($id);
+        return view('layouts.Detailsupdating', ["contact" => $contact]);
+    })->name('update');
+    Route::post('/saveupdate', [PostController::class, 'update'])->name('saveupdate');
+    Route::post('/delete/{id?}', [PostController::class, 'deletes'])->name('delete');
+
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

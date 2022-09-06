@@ -5,6 +5,8 @@
   <title></title>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
   <!-- <link rel="stylesheet" type="text/css" href="defaut.css"> -->
+  <script src="{{ asset('js/capcha.js') }}" defer></script>
+  <script src="{{asset('js/jquery1.js')}}" defer></script>
 </head>
 <style>
   .form-group {
@@ -25,7 +27,7 @@
       <div class="col"></div>
     </div>
     <div class="row align-items-center">
-      <form action="{{route('login')}}" method="POST">
+      <form id="form1" action="{{route('login')}}" method="POST">
       @csrf
         <div class="col-md-1"></div>
         
@@ -39,6 +41,7 @@
             <input type="password" class="form-control" id="password" name="password" placeholder="Enter subject">
           </div>
           <!-- <div class="col-md-3"> -->
+          <div class="g-recaptcha" data-sitekey="6LduV8ohAAAAAMhYG5ICX6vne0pDYBQKGef-SOQ0"></div>
           <div class="d-grid gap-2">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -53,6 +56,7 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="aj.js"></script>
   <script type="text/javascript" src="scrip.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
