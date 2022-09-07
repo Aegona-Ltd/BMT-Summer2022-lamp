@@ -44,10 +44,11 @@ tr:nth-child(even) {
              <td>{{$save->subject}}</td>
              <td>{{$save->content}}</td>
              <td><a href="/admin/update/{{$save->id}}">Update</a></td>
-             <td>
              <form action="/admin/delete/{{$save->id}}" method="POST">
               @csrf
-             <button type="submit" class="btn btn-danger">Delete</button>
+              <td><button>Delete</button></td>
+
+              
              </form>
              </td>
              </tr>

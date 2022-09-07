@@ -25,12 +25,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
     Route::get('/ContactForm', [PostController::class, 'show'])->name('show');
-    Route::get('/update/{id?}', function ($id) {
-        $contact = App\Models\Savecontact::find($id);
-        return view('layouts.Detailsupdating', ["contact" => $contact]);
-    })->name('update');
-    Route::post('/saveupdate', [PostController::class, 'update'])->name('saveupdate');
-    Route::post('/delete/{id?}', [PostController::class, 'deletes'])->name('delete');
+    Route::get('update/{id?}',[PostController::class,'getinfoupdate']);
+    Route::post('update',[PostController::class,'update'])->name('update');
+    Route::post('/delete/{id?}',[PostController::class,'delete'])->name('delete');
 
 });
 

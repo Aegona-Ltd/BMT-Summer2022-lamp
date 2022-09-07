@@ -13,29 +13,29 @@
       <div class="col"></div>
     </div>
     <div class="row align-items-center">
-      <form action="{{route('saveupdate')}}" method="POST">
+      <form action="{{route('update')}}" method="POST">
         @csrf
         <div class="col-md-1"></div>
         <div class="col">
             <a href="{{route('show')}}">Back</a>
-            <input type="hidden" name="id" value="{{$contact->id}}">
+            <input type="hidden" name="id" value="{{$infoupdate->id}}">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" value="{{$contact->name}}" id="name" name="name">
+            <input type="text" class="form-control" value="{{$infoupdate->name}}" id="name" name="name">
             <small id="namelHelp" class="form-text text-muted"></small>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{$contact->email}}">
+            <input type="email" class="form-control" id="email" name="email" value="{{$infoupdate->email}}">
             <small id="emailHelp" class="form-text text-muted"></small>
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="subject" class="form-control" id="subject" name="subject" value="{{$contact->subject}}" >
+            <input type="subject" class="form-control" id="subject" name="subject" value="{{$infoupdate->subject}}" >
           </div>
           <div class="form-group">
             <label for="textarea">Content</label>
-            <textarea class="form-control"  id="content" name="content" rows="3">{{$contact->content}}</textarea>
+            <textarea class="form-control"  id="content" name="content" rows="3">{{$infoupdate->content}}</textarea>
           </div>
         </div>
         <div class="col-md-1"></div>

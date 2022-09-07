@@ -24,26 +24,25 @@ class PostController extends Controller
         $savecontact = Savecontact::paginate(5);
         return view('view', compact('savecontact'));
     }
+    public function getinfoupdate($id)
+    {
+        $infoupdate = Savecontact::find($id);
+        return view('layouts.Detailsupdating',["infoupdate"=>$infoupdate]);
+    }
     public function update(Request $request)
     {
-
-        $contact = Savecontact::find($request->id);
-
-        $contact->name = $request->name;
-        $contact->email = $request->email;
-        $contact->subject = $request->subject;
-        $contact->content = $request->content;
-
-        $contact->save();
+        $infoupdate = Savecontact::find($request->id);
+        $infoupdate->name = $request->name;
+        $infoupdate->email =$request->email;
+        $infoupdate->subject = $request->subject;
+        $infoupdate->content = $request->content;
+        $infoupdate->save();
         return redirect()->route('show');
-        // $update = Savecontact::where('id',$request->id)->update($request->all());
     }
-    public function deletes(Request $request)
+    public function delete($id)
     {
-        #tìm button id mình đã chọn
-        Savecontact::find($request->id)->delete();
+        Savecontact::find($id)->delete();
         return redirect()->route('show');
-
-       
     }
 }
+   
