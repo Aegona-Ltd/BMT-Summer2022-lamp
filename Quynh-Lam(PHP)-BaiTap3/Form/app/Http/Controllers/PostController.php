@@ -24,11 +24,7 @@ class PostController extends Controller
         $savecontact = Savecontact::paginate(5);
         return view('view', compact('savecontact'));
     }
-    public function getinfoupdate($id)
-    {
-        $infoupdate = Savecontact::find($id);
-        return view('layouts.Detailsupdating',["infoupdate"=>$infoupdate]);
-    }
+   
     public function update(Request $request)
     {
         $infoupdate = Savecontact::find($request->id);

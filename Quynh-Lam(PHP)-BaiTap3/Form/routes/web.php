@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('update/{id?}',[PostController::class,'getinfoupdate']);
     Route::post('update',[PostController::class,'update'])->name('update');
     Route::post('/delete/{id?}',[PostController::class,'delete'])->name('delete');
-
+    Route::prefix('products')->middleware(['auth'])->group(function () {
+        Route::get('/add', [ProductsController::class ,'getinfo'])->name('getinfo');
+        Route::get('/showproduct', [ProductsController::class,'show'])->name('showproduct');
+        Route::post('/product', [ProductsController::class, 'save'])->name('saveproducts');
+    });
 });
+
 
 require __DIR__ . '/auth.php';

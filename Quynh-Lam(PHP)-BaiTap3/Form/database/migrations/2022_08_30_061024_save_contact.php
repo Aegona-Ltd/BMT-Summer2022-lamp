@@ -13,7 +13,6 @@ class SaveContact extends Migration
      */
     public function up()
     {
-        $table
         //
     }
 
