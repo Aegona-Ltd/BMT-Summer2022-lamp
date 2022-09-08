@@ -33,6 +33,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/add', [ProductsController::class ,'getinfo'])->name('getinfo');
         Route::get('/showproduct', [ProductsController::class,'show'])->name('showproduct');
         Route::post('/product', [ProductsController::class, 'save'])->name('saveproducts');
+        Route::get('/product/{id?}',[ProductsController::class,'getinfoup'])->name('getinfoup');
+        Route::post('/update',[ProductsController::class,'saveupdate'])->name('saveupdate');
+        Route::post('/delete/{id?}',[ProductsController::class,'delete'])->name('delete');
     });
 });
 

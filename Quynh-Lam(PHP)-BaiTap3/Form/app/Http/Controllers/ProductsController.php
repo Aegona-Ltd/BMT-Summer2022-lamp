@@ -14,30 +14,59 @@ class ProductsController extends Controller
         return view('product.addproduct');
 
     }
-    public function save(Request $requset)
+    public function save(Request $request)
     {
-        $requset->validate(
+        $request->validate(
             [
                 'name'=>'required',
                 'price'=>'integer',
                 'inventory'=>'integer',
-                'type'=>'regex:[a-zA-Z]'
-
             ]
             );
         $info = new Product();
-        $info->name = $requset->name;
-        $info->type = $requset->type;
-        $info->price = $requset->price;
-        $info->inventory = $requset->inventory;
+        $info->name = $request->name;
+        $info->type = $request->type;
+        $info->price = $request->price;
+        $info->inventory = $request->inventory;
         $info->save();
         return redirect()->route('showproduct');
         
     }
     public function show(Product $product)
     {
-        $save = Product::paginate(5);
+        $save = Product::paginate(10);
         return view('product.viewproduct', compact('save'));
+    }
+    #UPDATE
+    public function getinfoup($id)
+    {
+       $getproduct = Product::find($id);
+       return view('layouts.DetailUpproduct',["infoproduct"=>$getproduct]);
+
+    }
+    public function saveupdate(Request $request)
+    {
+        $request->validate(
+            [
+                'name'=>'required',
+                'price'=>'integer',
+                'inventory'=>'integer',
+            ]
+            );
+            $getproduct = Product::find($request->id);
+            $getproduct->name = $request->name;
+            $getproduct->type = $request->type;
+            $getproduct->price = $request->price;
+            $getproduct->inventory = $request->inventory;
+            $getproduct->save();
+            return redirect()->route('showproduct');
+
+    }
+    public function delete($id)
+    {
+        $delete = Product::find($id)->delete();
+        return redirect()->route('showproduct');
+
     }
    
 }

@@ -8,6 +8,11 @@ use SaveContact as GlobalSaveContact;
 
 class PostController extends Controller
 {
+    public function getinfoupdate($id)
+    {
+        $infoupdate = Savecontact::find($id);
+        return view('layouts.Detailsupdating',["infoupdate"=>$infoupdate]);
+    }
     //
     public function save(Request $requset)
     {
@@ -21,7 +26,7 @@ class PostController extends Controller
     }
     public function show(Savecontact $savecontact)
     {
-        $savecontact = Savecontact::paginate(5);
+        $savecontact = Savecontact::paginate(10);
         return view('view', compact('savecontact'));
     }
    
