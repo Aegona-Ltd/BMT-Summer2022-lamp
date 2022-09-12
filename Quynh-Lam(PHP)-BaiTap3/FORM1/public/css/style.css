@@ -1,0 +1,40 @@
+body{
+    margin: auto;
+    padding: auto;
+    background-color: antiquewhite;
+    width: auto;
+    height: auto;
+    
+}
+h1{
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    color: darkgreen
+}
+#logincontent
+{
+    width: 600px;
+    margin: auto;
+    padding: auto;
+    height: auto;
+    margin-top: 90px;
+    background-image: url("../../public/img/anh1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+#form1
+{
+    width: 400px;
+    margin: auto;
+    padding: auto;
+}
+#sub
+{
+text-align: center;
+padding-bottom: 40px;
+}
+label{
+    font-family: 'Bungee', cursive;
+    color: darkgreen
+}
