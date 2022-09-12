@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,28 +16,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('client.contact');
+    return view('content.content');
 });
-
-
-Route::post('/contact', [PostController::class, 'save'])->name('contacts');
+Route::post('/savecontact', [PostController::class, 'saveinfo'])->name('savecontact');
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-    Route::get('/ContactForm', [PostController::class, 'show'])->name('show');
-    Route::get('update/{id?}',[PostController::class,'getinfoupdate']);
-    Route::post('update',[PostController::class,'update'])->name('update');
-    Route::post('/delete/{id?}',[PostController::class,'delete'])->name('delete');
-    Route::prefix('products')->middleware(['auth'])->group(function () {
-        Route::get('/add', [ProductsController::class ,'getinfo'])->name('getinfo');
-        Route::get('/showproduct', [ProductsController::class,'show'])->name('showproduct');
-        Route::post('/product', [ProductsController::class, 'save'])->name('saveproducts');
-        Route::get('/product/{id?}',[ProductsController::class,'getinfoup'])->name('getinfoup');
-        Route::post('/update',[ProductsController::class,'saveupdate'])->name('saveupdate');
-        Route::post('/delete/{id?}',[ProductsController::class,'delete'])->name('delete');
+    Route::get('/infocontact', [PostController::class, 'show'])->name('show');
+    Route::get('/show', function () {
+        return view('products');
+    })->name('showproduct');
+    Route::get('/getbyid/{id?}', [PostController::class, 'getbyid'])->name('getbyid');
+    Route::post('/save', [PostController::class, 'save'])->name('save');
+    Route::get('/showcontact', [PostController::class, 'showcontactinfo'])->name('showcontact');
+    Route::post('/view', [PostController::class, 'view']);
+    Route::post('/delete/{id?}', [PostController::class, 'delete']);
+    Route::prefix('/product')->middleware(['auth'])->group(function () {
+        Route::post('/saveproduct',[ProductController::class,'saveproduct'])->name('saveproduct');
+        Route::get('/showproduct',[ProductController::class,'showproduct'])->name('showproduct');
+        Route::post('/delete/{id?}',[ProductController::class,'delete'])->name('delete');
+        Route::get('/getid/{id}',[ProductController::class,'getbyid']);
+        Route::post('/update',[ProductController::class,'update'])->name('updateproduct');
+        
     });
 });
-
 
 require __DIR__ . '/auth.php';

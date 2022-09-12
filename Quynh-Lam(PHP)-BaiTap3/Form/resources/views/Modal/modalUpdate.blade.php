@@ -34,7 +34,7 @@
                 
               </div>
               <div id="sub">
-                <button type="submit" class="btn-update btn btn-primary">Submit</button>
+                <button type="button" class="btn-update btn btn-primary">Submit</button>
               </div>
           </div>
           </form>

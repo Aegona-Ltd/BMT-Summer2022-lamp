@@ -1,62 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" type="text/css" href="defaut.css"> -->
-  <script src="{{ asset('js/capcha.js') }}" defer></script>
-  <script src="{{asset('js/jquery1.js')}}" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
-<style>
-  .form-group {
-    margin-bottom: 15px;
-  }
-</style>
 
 <body>
-  <div class="container">
-    <div class="row align-items-start">
-      <div class="col"></div>
-      <div class="col">
-        <div class="header">
-          <h4 style="color: #35BDB2;line-height:70px">Login Form</h4>
-        </div>
-        <div style="clear:both"></div>
-      </div>
-      <div class="col"></div>
-    </div>
-    <div class="row align-items-center">
-      <form id="form1" action="{{route('login')}}" method="POST">
+  <div id="logincontent">
+    <h1>LOGIN</h1>
+    <form id="form1" action="{{route('login')}}" method="POST">
       @csrf
-        <div class="col-md-1"></div>
-        
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="username" name="email"  placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="Password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter subject">
-          </div>
-          <!-- <div class="col-md-3"> -->
-          <div class="g-recaptcha" data-sitekey="6LduV8ohAAAAAMhYG5ICX6vne0pDYBQKGef-SOQ0"></div>
-          <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-          <!-- </div> -->
+      <div id="form1">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="email" name="email">
         </div>
-      </form>
-
-    </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="6LduV8ohAAAAAMhYG5ICX6vne0pDYBQKGef-SOQ0"></div>
+        </div>
+      </div>
+     
+      <div id="sub">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="aj.js"></script>
-  <script type="text/javascript" src="scrip.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </form>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="{{ asset('js/capcha.js') }}" ></script>
 
 </html>

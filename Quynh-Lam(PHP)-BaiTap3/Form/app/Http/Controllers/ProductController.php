@@ -43,9 +43,12 @@ class ProductController extends Controller
         $updateproduct->type =$request->type;
         $updateproduct->price =$request->price;
         $updateproduct->inventory =$request->inventory;
-        $updateproduct->save();
-
-
-
+        $rs =$updateproduct->save();
+        if($rs){
+            session()->flash("message","Sửa thành công!");
+        }else{
+            session()->flash("message","Sửa thất bại!");
+        }
+        return response()->json(["message"=>"Sửa thành công!"]);
     }
 }

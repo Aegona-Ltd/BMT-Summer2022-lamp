@@ -2,48 +2,70 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Savecontact;
+use App\Models\SaveContact;
 use Illuminate\Http\Request;
-use SaveContact as GlobalSaveContact;
 
 class PostController extends Controller
 {
-    public function getinfoupdate($id)
-    {
-        $infoupdate = Savecontact::find($id);
-        return view('layouts.Detailsupdating',["infoupdate"=>$infoupdate]);
-    }
     //
-    public function save(Request $requset)
+    #luu thong tin nguoi dung nhap vao
+    public function saveinfo(Request $request)
     {
-        $info = new Savecontact();
-        $info->name = $requset->name;
-        $info->email = $requset->email;
-        $info->subject = $requset->subject;
-        $info->content = $requset->content;
-        $info->save();
-        return redirect()->route('login');
+        $saveinfo = new SaveContact();
+        $saveinfo->id =$request->id;
+        $saveinfo->name =$request->name;
+        $saveinfo->email =$request->email;
+        $saveinfo->subject =$request->subject;
+        $saveinfo->content =$request->content;
+        $saveinfo->save();
+        return redirect()->route('showcontact');
     }
-    public function show(Savecontact $savecontact)
+    public function showcontactinfo(SaveContact $savecontact)
     {
-        $savecontact = Savecontact::paginate(10);
-        return view('view', compact('savecontact'));
+        $info = SaveContact::all();
+        return view('dashboard' ,["info"=>$info]);
+
+
     }
-   
-    public function update(Request $request)
+    
+    public function save(Request $request)
     {
-        $infoupdate = Savecontact::find($request->id);
-        $infoupdate->name = $request->name;
-        $infoupdate->email =$request->email;
-        $infoupdate->subject = $request->subject;
-        $infoupdate->content = $request->content;
-        $infoupdate->save();
-        return redirect()->route('show');
+        // dd($request->all());
+        $savecontact = SaveContact::find($request->id);
+        $savecontact->name = $request->name;
+        $savecontact->email = $request->email;
+        $savecontact->subject =$request->subject;
+        $savecontact->content =$request->content;
+        $rs=$savecontact->save();
+        if($rs){
+            session()->flash("message","Sửa thành công!");
+        }else{
+            session()->flash("message","Sửa thất bại!");
+        }
+        return response()->json(["message"=>"Sửa thành công!"]);
+    }
+    public function view(Request $request)
+    {
+        $view = SaveContact::find($request->id);
+        $view->name =$request->name;
+        $view->email =$request->email;
+        $view->subject =$request->subject;
+        $view->content =$request->content;
+    }
+    #show content ng dung nhap
+    public function show(SaveContact $savecontact)
+    {
+        $savecontact = SaveContact::all();
+        return view('dashboard',["savecontact"=>$savecontact]);
+
+    }
+    public function getbyid(Request $request){
+        $contact = SaveContact::find($request->id);
+        return response()->json($contact);
     }
     public function delete($id)
     {
-        Savecontact::find($id)->delete();
-        return redirect()->route('show');
+        SaveContact::find($id)->delete();
+        return redirect()->route('showcontact');
     }
 }
-   

@@ -4,6 +4,11 @@
     <h2>Products Form</h2>
 </div>
 <div id="contenttable">
+@if (session('message'))
+    <div class="alert alert-success" role="alert">
+        {{ session('message') }}
+    </div>
+@endif
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
         Thêm Sản Phẩm
     </button>
@@ -50,6 +55,7 @@
 
 @endsection
 @section('scripts')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#table1').DataTable();
@@ -62,6 +68,7 @@
             success: function(response) {
                 console.log(response);
                 $('#updateproductModal').modal('show');
+                $('#updateproductModal').find("[name='id']").val(response.id)
                 $('#updateproductModal').find("[name='name']").val(response.name)
                 $('#updateproductModal').find("[name='type']").val(response.type)
                 $('#updateproductModal').find("[name='price']").val(response.price)
@@ -73,7 +80,7 @@
     });
     $('.btn-update').click(function(){
     //lay du lieu cua form
-    var formData = FormData($('form#formUpdateproduct')[0])
+    var formData =new FormData($('form#formUpdateproduct')[0])
 
     $.ajax({
         headers: {
@@ -86,10 +93,17 @@
         processData :false,
         contentType :false,
         success:function(response){
+            console.log(response);
+
             $('#updateproductModal').modal('hide');
-        location.reload();
+            // swal({
+//   title: "Good job!",
+//   text:response.message,
+//   icon: (response.status==1?"success":"error"),
+//   button: "OK",
+// });
+        // location.reload();
         }
-        
     });
     });
 </script>

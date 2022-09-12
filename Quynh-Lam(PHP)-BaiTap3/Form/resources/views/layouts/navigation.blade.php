@@ -5,24 +5,22 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('show') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-               
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('show')" :active="request()->routeIs('show')">
-                        {{ __('Contact') }}
+                    <x-nav-link :href="route('showcontact')" :active="request()->routeIs('/showcontact')">
+                        {{ __('ContactForm') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('showproduct')" :active="request()->routeIs('product')">
-                        {{ __('Product') }}
+                    <x-nav-link :href="route('showproduct')" :active="request()->routeIs('showproduct')">
+                        {{ __('Products') }}
                     </x-nav-link>
                 </div>
-                
             </div>
 
             <!-- Settings Dropdown -->
@@ -70,7 +68,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('show')" :active="request()->routeIs('show')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
