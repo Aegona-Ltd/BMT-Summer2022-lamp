@@ -22,7 +22,9 @@ header("Content-Type:application/json");
                 'companyname' => $companyname,
                 'businessphone' => $businessphone,
                 'email' => $email,
-                'password' => $password
+                'password' => $password,
+                'created' => $created,
+                'updated' => $updated
             );
             array_push($user_arr, $user_item);
         }
